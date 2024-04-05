@@ -8,6 +8,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Modular.setInitialRoute('/');
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Posts e Comentários',
       theme: ThemeData(primarySwatch: Colors.green),
       routerConfig: Modular.routerConfig,
