@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../blocs/comments_event.dart';
 import '../blocs/comments_state.dart';
 import '../blocs/comments_bloc.dart';
-import '../services/placeholder_service.dart';
 
 class CommentsPage extends StatefulWidget {
-  final String title;
-  final int postId;
+  final String postId;
 
   const CommentsPage({
     super.key,
-    required this.title,
     required this.postId,
   });
 
@@ -21,7 +19,7 @@ class CommentsPage extends StatefulWidget {
 }
 
 class _CommentsPageState extends State<CommentsPage> {
-  final _commentsBloc = CommentsBloc(PlaceholderService());
+  final _commentsBloc = Modular.get<CommentsBloc>();
 
   @override
   void initState() {
@@ -30,16 +28,10 @@ class _CommentsPageState extends State<CommentsPage> {
   }
 
   @override
-  void dispose() {
-    _commentsBloc.close();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text("Comments"),
       ),
       body: BlocBuilder<CommentsBloc, CommentsState>(
           bloc: _commentsBloc,

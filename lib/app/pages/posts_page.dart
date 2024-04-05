@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../blocs/posts_event.dart';
 import '../blocs/posts_state.dart';
 import '../blocs/posts_bloc.dart';
-import '../services/placeholder_service.dart';
-import 'comments_page.dart';
 
 class PostsPage extends StatefulWidget {
-  const PostsPage({super.key, required this.title});
-  final String title;
+  const PostsPage({super.key});
 
   @override
   State<PostsPage> createState() => _PostsPageState();
 }
 
 class _PostsPageState extends State<PostsPage> {
-  final _postsBloc = PostsBloc(PlaceholderService());
+  final _postsBloc = Modular.get<PostsBloc>();
 
   @override
   void initState() {
@@ -25,17 +23,11 @@ class _PostsPageState extends State<PostsPage> {
   }
 
   @override
-  void dispose() {
-    _postsBloc.close();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(widget.title),
+        title: const Text("Posts"),
       ),
       body: BlocBuilder<PostsBloc, PostsState>(
           bloc: _postsBloc,
@@ -55,14 +47,8 @@ class _PostsPageState extends State<PostsPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => CommentsPage(
-                              title: 'Comments',
-                              postId: state.data[index].id!,
-                            ),
-                          ),
-                        );
+                        Modular.to.pushNamed(
+                            "/comments/${state.data[index].id.toString()}");
                       },
                       child: Container(
                         color: Colors.grey.shade200,

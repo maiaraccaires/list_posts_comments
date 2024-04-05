@@ -16,7 +16,7 @@ class PlaceholderService {
     }
   }
 
-  Future<List<CommentsModel>> getCommentByPost({required int id}) async {
+  Future<List<CommentsModel>> getCommentByPost({required String id}) async {
     final response = await _dio.get('$_domain/posts/$id/comments');
 
     if (response.statusCode == 200) {

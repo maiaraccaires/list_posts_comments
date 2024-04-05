@@ -3,7 +3,7 @@ abstract class CommentsEvent {
 }
 
 class FetchCommentsEvent extends CommentsEvent {
-  final int postId;
+  final String postId;
 
   FetchCommentsEvent(this.postId);
 }
