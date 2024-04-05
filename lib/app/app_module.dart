@@ -19,6 +19,9 @@ class AppModule extends Module {
   void routes(r) {
     r.child('/', child: (context) => const PostsPage());
     r.child('/comments/:postId',
-        child: (context) => CommentsPage(postId: r.args.params["postId"]));
+        child: (context) => CommentsPage(
+              postId: r.args.params["postId"],
+              postsModel: r.args.data,
+            ));
   }
 }

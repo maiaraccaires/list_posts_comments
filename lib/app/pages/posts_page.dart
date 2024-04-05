@@ -27,7 +27,7 @@ class _PostsPageState extends State<PostsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text("Posts"),
+        title: const Text("Postagens"),
       ),
       body: BlocBuilder<PostsBloc, PostsState>(
           bloc: _postsBloc,
@@ -48,7 +48,8 @@ class _PostsPageState extends State<PostsPage> {
                     child: GestureDetector(
                       onTap: () {
                         Modular.to.pushNamed(
-                            "/comments/${state.data[index].id.toString()}");
+                            "/comments/${state.data[index].id.toString()}",
+                            arguments: state.data[index]);
                       },
                       child: Container(
                         color: Colors.grey.shade200,
@@ -77,7 +78,7 @@ class _PostsPageState extends State<PostsPage> {
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 6),
                                       child: Text(
-                                        'POST',
+                                        'POSTAGEM',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w600),
