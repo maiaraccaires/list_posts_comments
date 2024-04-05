@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:teste_openco_flutter_pleno/app/blocs/comments_bloc.dart';
-import 'package:teste_openco_flutter_pleno/app/services/placeholder_service.dart';
+
+import 'blocs/comments_bloc.dart';
+import 'blocs/posts_bloc.dart';
+import 'services/placeholder_service.dart';
 import 'pages/comments_page.dart';
 import 'pages/posts_page.dart';
-
-import 'blocs/posts_bloc.dart';
 
 class AppModule extends Module {
   @override

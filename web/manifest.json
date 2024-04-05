@@ -1,6 +1,6 @@
 {
-    "name": "teste_openco_flutter_pleno",
-    "short_name": "teste_openco_flutter_pleno",
+    "name": "list_posts_comments",
+    "short_name": "list_posts_comments",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

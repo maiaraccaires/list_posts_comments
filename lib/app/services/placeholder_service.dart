@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:teste_openco_flutter_pleno/app/models/comments_model.dart';
-import 'package:teste_openco_flutter_pleno/app/models/posts_model.dart';
+import '../models/comments_model.dart';
+import '../models/posts_model.dart';
 
 class PlaceholderService {
   final Dio dio;

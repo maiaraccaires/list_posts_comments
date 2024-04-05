@@ -1,4 +1,4 @@
-package com.example.teste_openco_flutter_pleno
+package com.example.list_posts_comments
 
 import io.flutter.embedding.android.FlutterActivity
 

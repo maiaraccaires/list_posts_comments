@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.teste_openco_flutter_pleno">
+    package="com.example.list_posts_comments">
    <application
         android:label="Posts e Comentários"
         android:name="${applicationName}"

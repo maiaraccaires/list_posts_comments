@@ -8,7 +8,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Modular.setInitialRoute('/');
     return MaterialApp.router(
-      title: 'Open Co - Teste Flutter Pleno',
+      title: 'Posts e Comentários',
       theme: ThemeData(primarySwatch: Colors.green),
       routerConfig: Modular.routerConfig,
     );

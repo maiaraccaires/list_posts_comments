@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:mocktail/mocktail.dart';
-import 'package:teste_openco_flutter_pleno/app/services/placeholder_service.dart';
+import 'package:list_posts_comments/app/services/placeholder_service.dart';
 
 class MockDio extends Mock implements Dio {}
 

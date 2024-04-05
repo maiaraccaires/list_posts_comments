@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:teste_openco_flutter_pleno/app/models/posts_model.dart';
 
+import '../models/posts_model.dart';
 import '../services/placeholder_service.dart';
 import 'comments_event.dart';
 import 'comments_state.dart';
