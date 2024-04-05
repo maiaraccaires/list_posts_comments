@@ -16,7 +16,7 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
       final posts = await service.getPosts();
       emit(PostsLoaded(posts));
     } catch (e) {
-      emit(PostsError('Erro: $e'));
+      emit(PostsError('Não há Postagens'));
     }
   }
 }

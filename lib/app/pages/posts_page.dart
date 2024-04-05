@@ -48,8 +48,7 @@ class _PostsPageState extends State<PostsPage> {
                     child: GestureDetector(
                       onTap: () {
                         Modular.to.pushNamed(
-                            "/comments/${state.data[index].id.toString()}",
-                            arguments: state.data[index]);
+                            "/comments/${state.data[index].id.toString()}");
                       },
                       child: Container(
                         color: Colors.grey.shade200,
